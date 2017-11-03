@@ -27,6 +27,9 @@ public class Main {
 		}
 		// to check the steps
 		System.out.println(steps);
+		if(steps.size()-1 == loop) {
+			System.out.println(maximumScore(steps));
+		}
 
 
 		
@@ -37,10 +40,12 @@ public class Main {
 		for(int i = 0; i < steps.size();) {
 			if(i == steps.size()) sum += steps.get(i+1);
 			else {
-				rand = (Math.random*10 +1) % 2 +1; // 1 or 2 
+				sum += steps.get(i);
+				rand = (int)(Math.random()*10 +1) % 2 +1; // 1 or 2 
 				i += rand;
 			}
 		}
 
+		return sum;
 	}
 }
