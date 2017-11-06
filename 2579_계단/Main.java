@@ -5,6 +5,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Integer> steps = null;
 		int input = 0;
+		int max = 0;
 		while (!sc.hasNextInt())
 			sc.nextLine();
 		
@@ -29,6 +30,9 @@ public class Main {
 		System.out.println(steps);
 		if(steps.size()-1 == loop) {
 			System.out.println(maximumScore(steps));
+			
+		} else {
+			System.out.println();
 		}
 
 
@@ -37,9 +41,14 @@ public class Main {
 	public static int maximumScore(ArrayList<Integer> steps) {
 		int rand = 0;
 		int sum = 0;
-		for(int i = 0; i < steps.size();) {
-			if(i == steps.size()) sum += steps.get(i+1);
+		for(int i = 0; i < steps.size() ;) {
+			if(i == steps.size()-1) {
+				sum += steps.get(i);
+				//System.out.println("-Step : " + i);
+				break;
+			}
 			else {
+				//System.out.println("-Step : " + i);
 				sum += steps.get(i);
 				rand = (int)(Math.random()*10 +1) % 2 +1; // 1 or 2 
 				i += rand;
