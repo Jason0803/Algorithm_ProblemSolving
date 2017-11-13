@@ -13,7 +13,7 @@ public class Main {
 	        f[i] = f[i-1] + f[i-2];
 	    }
 	      
-	    return f[n];
+	    return f[n]+n;
 	}
       
     public static void main (String args[]){
