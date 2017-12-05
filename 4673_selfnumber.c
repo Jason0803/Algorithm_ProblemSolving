@@ -11,7 +11,6 @@ int create(int input) {
 int main() {
 	int* array = (int* )malloc(sizeof(int)*10000);
 	int result = 0;
-
 	for(int i = 0; i <= 10000; i++){
 		result = create(i);
 		if(result < 10000)
