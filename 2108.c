@@ -16,11 +16,15 @@ void median(int* array, int size) {
 	printf("%d\n", array[size/2]);
 }
 void freq(int* array, int size) {
+	int count = 0;
+	int freq = 0;
 	int* temp = (int*)malloc(sizeof(int)*MAX_INPUT*2+1);
 	memset(temp, 0, MAX_INPUT*2+1);
 	for(int i = 0; i < size; i++) {
 		temp[array[i]+4000]++;
 	}
+	for(int j = 0; j < ; )
+	qsort
 }
 void range(int* array, int size) {
 	qsort(array, size, sizeof(int), comp);
