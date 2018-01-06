@@ -16,8 +16,9 @@ int main() {
 		T--;
 	}
 
-	for(int j = 0; j < i; j++) {
+	solutions[0] = 0;
+	solutions[1] = steps[1];
+	solutions[2] = steps[1] + steps[2];
 
-	}
 	return 0;
 }
