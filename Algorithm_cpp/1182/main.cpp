@@ -15,8 +15,6 @@ int main() {
     
     sort(list.begin(), list.end());
     sum = 0;
-    
-    
-    
+
     return 0;
 }
