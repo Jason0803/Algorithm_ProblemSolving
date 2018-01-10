@@ -10,5 +10,6 @@
  		scanf("%d", &steps[i-N]);
  		N--;
  	}
+ 	
  	return 0;
  }

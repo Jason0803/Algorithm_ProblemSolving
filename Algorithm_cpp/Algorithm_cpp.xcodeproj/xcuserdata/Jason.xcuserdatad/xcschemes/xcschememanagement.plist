@@ -24,6 +24,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>11724.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
 		<key>1182.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -68,6 +73,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>swx_1225.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 	</dict>
 </dict>

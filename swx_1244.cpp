@@ -22,7 +22,6 @@ void sort_reverse(int* array, int size) {
 		}
 	}
 }
-int main() {
 	/*
 		1. 입력받음
 		2. 문자 > 숫자
@@ -33,6 +32,7 @@ int main() {
 			myVector.reverse();
 
 	 */
+int main() {
 
 	int T, count;
 	string input;
