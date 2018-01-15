@@ -2,6 +2,10 @@
 int buttons[10];
 
 bool ispossible(int x) {
+    if(x == 0){
+        if(buttons[0]) return true;
+        else return false;
+    }
     while(x > 0) {
         if(buttons[x%10] == 0)
             return false;
