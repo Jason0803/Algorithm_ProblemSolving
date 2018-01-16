@@ -1,4 +1,6 @@
 #include <cstdio>
+#include <cstdlib>
+using namespace std;
 int buttons[10];
 
 bool ispossible(int x) {
@@ -27,48 +29,30 @@ int main() {
         scanf("%d", &input);
         buttons[input] = 0;
     }
+    int dist;
+    int count = 0; // 누른 횟수
+
+    // 1. 100 번부터 차례로 하는것과 비교
+    dist = abs(n-100);
     
-    int count = 0;
-    
-    // 1. 번호 + 직접가는것
-    int temp, dist;
-    // 1-1. 감소 중에서 찾음
-    temp = n;
-    while(true){
-        if(ispossible(temp)) break;
-        else temp--;
+    // 2. N과 최대 가능한 수 까지 구한 뒤 1. 과 비교
+    for(int i=0; i<=1000000; i++) {
+        int j = i;
+        int length = 0;
+        if(ispossible(j)) {
+            count = abs(n-j);
+            if(j < 10) length = 1;
+            else {
+                while(j) {
+                length++;
+                j /= 10;
+                }
+            }
+            if(dist > count + length)
+                dist = count + length;
+        }
     }
-    dist = n - temp;
-    
-    // 1.2 증가 중에서 찾음
-    temp = n;
-    while(true) {
-        if(ispossible(temp)) break;
-            else temp++;
-    }
-    if(dist > (temp - n))
-        dist = temp -n;
-    
-    temp = n;
-    while(temp){
-        temp /= 10;
-        count++;
-    }
-    
-    // 2. 100 번부터 차례로 하는것과 비교
-    if(n < 100) {
-        if(dist > (100-n))
-            dist = 100 - n;
-    } else if(n > 100) {
-        if(dist > (n-100))
-            dist = n - 100;
-    } else {
-        dist = 0;
-        count = 0;
-    }
-    
-    count += dist;
-    printf("%d\n", count);
-    
+
+    printf("%d\n", dist);
     return 0;
 }
