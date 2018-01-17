@@ -22,6 +22,9 @@
 		96229EBF200CED3F003500B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96229EBE200CED3F003500B4 /* main.cpp */; };
 		96229ECA200CF898003500B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96229EC9200CF898003500B4 /* main.cpp */; };
 		96229ED5200DDC30003500B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96229ED4200DDC30003500B4 /* main.cpp */; };
+		96229EE0200E0550003500B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96229EDF200E0550003500B4 /* main.cpp */; };
+		96229EEB200E1748003500B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96229EEA200E1748003500B4 /* main.cpp */; };
+		96229EF6200E28D2003500B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96229EF5200E28D2003500B4 /* main.cpp */; };
 		9629D8442000BFB600A69467 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9629D8432000BFB600A69467 /* main.cpp */; };
 		9629D84F2000C01000A69467 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9629D84E2000C01000A69467 /* main.cpp */; };
 		9629D85A2000C13A00A69467 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9629D8592000C13A00A69467 /* main.cpp */; };
@@ -176,6 +179,33 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		96229ED0200DDC30003500B4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		96229EDB200E0550003500B4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		96229EE6200E1748003500B4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		96229EF1200E28D2003500B4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -469,6 +499,12 @@
 		96229EC9200CF898003500B4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		96229ED2200DDC30003500B4 /* 10971 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 10971; sourceTree = BUILT_PRODUCTS_DIR; };
 		96229ED4200DDC30003500B4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		96229EDD200E0550003500B4 /* 2845 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 2845; sourceTree = BUILT_PRODUCTS_DIR; };
+		96229EDF200E0550003500B4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		96229EE8200E1748003500B4 /* 1697 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 1697; sourceTree = BUILT_PRODUCTS_DIR; };
+		96229EEA200E1748003500B4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		96229EF3200E28D2003500B4 /* 1963 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 1963; sourceTree = BUILT_PRODUCTS_DIR; };
+		96229EF5200E28D2003500B4 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9629D8332000BF8F00A69467 /* Algorithm_cpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm_cpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		9629D8412000BFB600A69467 /* 1260 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 1260; sourceTree = BUILT_PRODUCTS_DIR; };
 		9629D8432000BFB600A69467 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -623,6 +659,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		96229ECF200DDC30003500B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96229EDA200E0550003500B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96229EE5200E1748003500B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96229EF0200E28D2003500B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -948,6 +1005,30 @@
 			path = 10971;
 			sourceTree = "<group>";
 		};
+		96229EDE200E0550003500B4 /* 2845 */ = {
+			isa = PBXGroup;
+			children = (
+				96229EDF200E0550003500B4 /* main.cpp */,
+			);
+			path = 2845;
+			sourceTree = "<group>";
+		};
+		96229EE9200E1748003500B4 /* 1697 */ = {
+			isa = PBXGroup;
+			children = (
+				96229EEA200E1748003500B4 /* main.cpp */,
+			);
+			path = 1697;
+			sourceTree = "<group>";
+		};
+		96229EF4200E28D2003500B4 /* 1963 */ = {
+			isa = PBXGroup;
+			children = (
+				96229EF5200E28D2003500B4 /* main.cpp */,
+			);
+			path = 1963;
+			sourceTree = "<group>";
+		};
 		9629D82A2000BF8F00A69467 = {
 			isa = PBXGroup;
 			children = (
@@ -990,6 +1071,9 @@
 				96229EBD200CED3F003500B4 /* 14606 */,
 				96229EC8200CF898003500B4 /* 14607 */,
 				96229ED3200DDC30003500B4 /* 10971 */,
+				96229EDE200E0550003500B4 /* 2845 */,
+				96229EE9200E1748003500B4 /* 1697 */,
+				96229EF4200E28D2003500B4 /* 1963 */,
 				9629D8342000BF8F00A69467 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1040,6 +1124,9 @@
 				96229EBC200CED3F003500B4 /* 14606 */,
 				96229EC7200CF898003500B4 /* 14607 */,
 				96229ED2200DDC30003500B4 /* 10971 */,
+				96229EDD200E0550003500B4 /* 2845 */,
+				96229EE8200E1748003500B4 /* 1697 */,
+				96229EF3200E28D2003500B4 /* 1963 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1492,6 +1579,57 @@
 			name = 10971;
 			productName = 10971;
 			productReference = 96229ED2200DDC30003500B4 /* 10971 */;
+			productType = "com.apple.product-type.tool";
+		};
+		96229EDC200E0550003500B4 /* 2845 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96229EE3200E0550003500B4 /* Build configuration list for PBXNativeTarget "2845" */;
+			buildPhases = (
+				96229ED9200E0550003500B4 /* Sources */,
+				96229EDA200E0550003500B4 /* Frameworks */,
+				96229EDB200E0550003500B4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 2845;
+			productName = 2845;
+			productReference = 96229EDD200E0550003500B4 /* 2845 */;
+			productType = "com.apple.product-type.tool";
+		};
+		96229EE7200E1748003500B4 /* 1697 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96229EEC200E1748003500B4 /* Build configuration list for PBXNativeTarget "1697" */;
+			buildPhases = (
+				96229EE4200E1748003500B4 /* Sources */,
+				96229EE5200E1748003500B4 /* Frameworks */,
+				96229EE6200E1748003500B4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 1697;
+			productName = 1697;
+			productReference = 96229EE8200E1748003500B4 /* 1697 */;
+			productType = "com.apple.product-type.tool";
+		};
+		96229EF2200E28D2003500B4 /* 1963 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96229EF7200E28D2003500B4 /* Build configuration list for PBXNativeTarget "1963" */;
+			buildPhases = (
+				96229EEF200E28D2003500B4 /* Sources */,
+				96229EF0200E28D2003500B4 /* Frameworks */,
+				96229EF1200E28D2003500B4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 1963;
+			productName = 1963;
+			productReference = 96229EF3200E28D2003500B4 /* 1963 */;
 			productType = "com.apple.product-type.tool";
 		};
 		9629D8322000BF8F00A69467 /* Algorithm_cpp */ = {
@@ -2039,6 +2177,18 @@
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
+					96229EDC200E0550003500B4 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					96229EE7200E1748003500B4 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					96229EF2200E28D2003500B4 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 					9629D8322000BF8F00A69467 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -2208,6 +2358,9 @@
 				96229EBB200CED3F003500B4 /* 14606 */,
 				96229EC6200CF898003500B4 /* 14607 */,
 				96229ED1200DDC30003500B4 /* 10971 */,
+				96229EDC200E0550003500B4 /* 2845 */,
+				96229EE7200E1748003500B4 /* 1697 */,
+				96229EF2200E28D2003500B4 /* 1963 */,
 			);
 		};
 /* End PBXProject section */
@@ -2330,6 +2483,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				96229ED5200DDC30003500B4 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96229ED9200E0550003500B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96229EE0200E0550003500B4 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96229EE4200E1748003500B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96229EEB200E1748003500B4 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96229EEF200E28D2003500B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96229EF6200E28D2003500B4 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2818,6 +2995,60 @@
 			name = Debug;
 		};
 		96229ED8200DDC30003500B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KJWG2UERCB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		96229EE1200E0550003500B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KJWG2UERCB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96229EE2200E0550003500B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KJWG2UERCB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		96229EED200E1748003500B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KJWG2UERCB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96229EEE200E1748003500B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KJWG2UERCB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		96229EF8200E28D2003500B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KJWG2UERCB;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96229EF9200E28D2003500B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -3567,6 +3798,33 @@
 			buildConfigurations = (
 				96229ED7200DDC30003500B4 /* Debug */,
 				96229ED8200DDC30003500B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96229EE3200E0550003500B4 /* Build configuration list for PBXNativeTarget "2845" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96229EE1200E0550003500B4 /* Debug */,
+				96229EE2200E0550003500B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96229EEC200E1748003500B4 /* Build configuration list for PBXNativeTarget "1697" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96229EED200E1748003500B4 /* Debug */,
+				96229EEE200E1748003500B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96229EF7200E28D2003500B4 /* Build configuration list for PBXNativeTarget "1963" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96229EF8200E28D2003500B4 /* Debug */,
+				96229EF9200E28D2003500B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
