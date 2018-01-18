@@ -1,31 +1,15 @@
 #include <cstdio>
 #include <string>
+#include <cstring>
 #include <queue>
 #include <algorithm>
 #define MAX 10000
 using namespace std;
 bool check[MAX+1];
+//vector<string> moves(MAX+1);
 string moves[MAX+1];
 string s;
 int t, a, b;
-int dslr_l(int number) {
-    s = to_string(number);
-    char first = s.front();
-    for(int i=0; i<(int)s.length()-1; i++){
-        s[i] = s[i+1];
-    }
-    s.back() = first;
-    return stoi(s);
-}
-int dslr_r(int number) {
-    s = to_string(number);
-    char last = s.back();
-    for(int i=(int)s.length()-1; i>0; i--){
-        s[i] = s[i-1];
-    }
-    s.front() = last;
-    return stoi(s);
-}
 void bfs(int start){
     queue<int> q;
     q.push(start);
@@ -41,7 +25,7 @@ void bfs(int start){
             if(check[next] == false){
                 q.push(next);
                 check[next] = true;
-                moves[next].append(moves[node] + "D");
+                moves[next] += moves[node] + "D";
             }
         }
         
@@ -51,22 +35,22 @@ void bfs(int start){
             if(check[next] == false) {
                 q.push(next);
                 check[next] = true;
-                moves[next].append(moves[node] + "S");
+                moves[next] += moves[node] + "S";
             }
         }
         
-        next = dslr_l(node);
+        next = (node%1000)*10 + node/1000;
         if(check[next] == false){
             q.push(next);
             check[next] = true;
-            moves[next].append(moves[node] + "L");
+            moves[next] += moves[node] + "L";
         }
         
-        next = dslr_r(node);
+        next = (node/10) + (node%10)*1000;
         if(check[next] == false){
             q.push(next);
             check[next] = true;
-            moves[next].append(moves[node] + "R");
+            moves[next] += moves[node] + "R";
         }
     }
 }
@@ -75,6 +59,8 @@ int main(){
     while(t--) {
         scanf("%d %d", &a, &b);
         memset(check, false, sizeof(check));
+        
+        //moves.clear();
         memset(moves, NULL, sizeof(moves));
         check[a] = true;
         bfs(a);
@@ -82,3 +68,4 @@ int main(){
     }
     return 0;
 }
+

@@ -89,6 +89,11 @@
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
+		<key>1226.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>50</integer>
+		</dict>
 		<key>1260.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -113,6 +118,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>35</integer>
+		</dict>
+		<key>1525.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>47</integer>
 		</dict>
 		<key>15350.xcscheme</key>
 		<dict>
@@ -153,6 +163,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>8</integer>
+		</dict>
+		<key>2251.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>48</integer>
 		</dict>
 		<key>2309.xcscheme</key>
 		<dict>
@@ -238,6 +253,16 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>14</integer>
+		</dict>
+		<key>swx_1226.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>51</integer>
+		</dict>
+		<key>swx_1949.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>49</integer>
 		</dict>
 	</dict>
 </dict>
