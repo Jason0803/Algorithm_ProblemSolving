@@ -28,7 +28,7 @@ int main() {
             if(temp % c != 0) count++;
         }
         sum += count;
-        result[place[i]] = count;
+        //result[place[i]] = count;
     }
     printf("%lld\n", sum);
     return 0;
