@@ -33,10 +33,10 @@ int main() {
     int count=0;
     printf("h : %d, l : %d\n", highest, lowest);
     for(rain=0; rain<=highest; rain++){
-        for(int i=0; i<n; i++){
+        for(int i=0; i<n; i++)
             for(int j=0; j<n; j++)
                 check[i][j] = false;
-        }
+        
         int ans = 0;
         for(int i=0; i<n; i++){
             for(int j=0; j<n; j++){
