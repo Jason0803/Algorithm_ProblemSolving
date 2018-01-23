@@ -359,6 +359,11 @@
 			<key>orderHint</key>
 			<integer>76</integer>
 		</dict>
+		<key>9663_easy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>77</integer>
+		</dict>
 		<key>Algorithm_cpp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
