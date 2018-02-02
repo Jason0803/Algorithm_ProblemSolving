@@ -92,7 +92,7 @@
 		<key>11399.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>86</integer>
+			<integer>85</integer>
 		</dict>
 		<key>11403.xcscheme</key>
 		<dict>
@@ -189,6 +189,11 @@
 			<key>orderHint</key>
 			<integer>81</integer>
 		</dict>
+		<key>1654.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>87</integer>
+		</dict>
 		<key>1697.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -217,7 +222,7 @@
 		<key>1931.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>85</integer>
+			<integer>86</integer>
 		</dict>
 		<key>1963.xcscheme</key>
 		<dict>
@@ -333,6 +338,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>28</integer>
+		</dict>
+		<key>2805.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>88</integer>
 		</dict>
 		<key>2839.xcscheme</key>
 		<dict>
