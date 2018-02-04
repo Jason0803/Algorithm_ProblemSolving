@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>10026.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>94</integer>
+		</dict>
 		<key>10039.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -157,7 +162,7 @@
 		<key>1389.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>91</integer>
+			<integer>92</integer>
 		</dict>
 		<key>14501.xcscheme</key>
 		<dict>
@@ -322,7 +327,7 @@
 		<key>2589.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>93</integer>
+			<integer>91</integer>
 		</dict>
 		<key>2606.xcscheme</key>
 		<dict>
@@ -332,7 +337,7 @@
 		<key>2644.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>92</integer>
+			<integer>93</integer>
 		</dict>
 		<key>2667.xcscheme</key>
 		<dict>
