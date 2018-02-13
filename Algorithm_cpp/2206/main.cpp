@@ -25,7 +25,10 @@ void bfs() {
             int nr = r + dr[k];
             int nc = c + dc[k];
             if(nr < 0 || nr > n || nc < 0 || nc > m) continue;
+            
+            // 다음곳 방문 여부
             if(dist[nr][nc][passed] > dist[r][c][passed]+1) {
+                // 벽이고, 아직 벽을 부수지 않았다면
                 if(map[nr][nc] == 1 && passed == 0) {
                     dist[nr][nc][1] = dist[r][c][0] + 1;
                     q.push(Point{nr,nc,1});
@@ -49,24 +52,7 @@ int main() {
     q.push(Point{0,0,0});
     dist[0][0][0] = dist[0][0][1] = 1;
     bfs();
-    
-    /*
-     반례 케이스
-     
-10 10
-0000000000
-1111111110
-0111111110
-0000000000
-0111111111
-0111111111
-0111111111
-0111111111
-0111111111
-0000000010
-     
-     */
-   // bfs(1,1,false);
+  
     result = dist[n-1][m-1][0];
     if(result > dist[n-1][m-1][1]) result = dist[n-1][m-1][1];
     if(result == INF) printf("-1\n");

@@ -105,7 +105,7 @@ int main() {
      --> 고슴도치 움직이며 현재 움직임 수+1 보다 물 움직임 수가 많으면 이동 가능
      */
     if ( painter[dx][dy] != -1 )
-        printf( "%d\n", painter[dx][dy] );
+        printf( "%d\n", painter[dx][dy]);
     else
         printf( "KAKTUS\n" );
     
