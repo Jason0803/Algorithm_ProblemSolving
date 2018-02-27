@@ -1,99 +1,86 @@
 #include <iostream>
-#include <algorithm>
 #include <string.h>
 #include <queue>
-#define WIDTH 12
-#define HEIGHT 6
+#define WIDTH 6
+#define HEIGHT 12
 using namespace std;
 int ans;
-bool stable;
-int chain[WIDTH*HEIGHT +1];
-char map[WIDTH+1][HEIGHT+1];
-int dist[WIDTH+1][HEIGHT+1];
-bool check[WIDTH+1][WIDTH+1];
-
+char map[HEIGHT+1][WIDTH+1];
+bool check[HEIGHT][WIDTH], flag;
 int dr[] = {0, 0, -1, 1};
-int dc[] = {-1, 1, 0, 0};
+int dc[] = {1, -1, 0, 0};
 queue<pair<int, int>> q;
-
 void display() {
-    cout << "\n=== Display ===\n";
-    for(int row = 0; row < WIDTH; row++) {
-        for(int column = 0; column < HEIGHT; column++) {
-            cout << map[row][column];
+    for(int i=0; i<HEIGHT; i++) {
+        cout << map[i] << '\n';
+    }
+}
+void dfs(int r, int c, char colour) {
+    for(int d=0; d<4; d++) {
+        int nr = r + dr[d];
+        int nc = c + dc[d];
+        if(nr < 0 || nr >= HEIGHT || nc < 0 || nc >= WIDTH) continue;
+        if(check[nr][nc]) continue;
+        if(map[nr][nc] == colour) {
+            check[nr][nc] = true;
+            q.push(make_pair(nr,nc));
+            dfs(nr,nc,colour);
         }
-        puts("");
     }
 }
 void make_empty() {
-    for(int row = WIDTH-1; row > 0; row--) {
-        for(int column = 0; column < HEIGHT; column++) {
-            if(chain[dist[row][column]] >= 3) {
-                map[row][column] = '.';
-                stable = false;
-            }
-        }
+    bool satisfied = false;
+    if(q.size() >= 4) {
+        satisfied = true;
+        flag = true;
     }
-}
-void bfs(char colour, int connected) {
     while(!q.empty()) {
-        int r = q.front().first;
-        int c = q.front().second;
-        q.pop();
-        for(int d=0; d<4; d++) {
-            int nr = r + dr[d];
-            int nc = c + dc[d];
-            if(nr < 0 || nr >= WIDTH || nc < 0 || nc >= HEIGHT) continue;
-            if(check[nr][nc]) continue;
-            
-            if(map[nr][nc] == colour) {
-                check[nr][nc] = true;
-                q.push(make_pair(nr,nc));
-                dist[nr][nc] = connected;
-                chain[connected]++;
-            }
+        if(satisfied) {
+            int r = q.front().first;
+            int c = q.front().second;
+            map[r][c] = '.';
         }
+        q.pop();
     }
 }
 void gravity() {
-    for(int column = 0; column < HEIGHT; column++) {
-        int row = WIDTH-1;
-        while(true) {
-            if(map[row][column] == '.') {
-                swap(map[row][column], map[row-1][column]);
+    for(int i=0; i<6; i++) {
+        for(int j=HEIGHT-1; j>=0; j--) {
+            if(map[j][i] == '.') continue;
+            for(int k=HEIGHT-1; k>j; k--) {
+                if(map[k][i] != '.') continue;
+                map[k][i] = map[j][i];
+                map[j][i] = '.';
+                break;
             }
-            row--;
         }
     }
-    display();
-    ans++;
 }
-
 int main() {
-    for(int i=0; i<WIDTH; i++) {
+    for(int i=0; i<HEIGHT; i++) {
         cin >> map[i];
     }
-    //display();
-    while(!stable) {
-        stable = true;
+    while(1) {
+        flag = false;
         memset(check, false, sizeof(check));
-        memset(dist, 0, sizeof(dist));
-        memset(chain, 0, sizeof(chain));
-        
-        int connected = 0;
-        for(int row = WIDTH-1; row > 0; row--) {
-            for(int column = 0; column < HEIGHT; column++) {
-                if(map[row][column] != '.' && check[row][column] == false) {
-                    q.push(make_pair(row, column));
-                    bfs(map[row][column], connected++);
+
+        for(int i=0; i<HEIGHT; i++) {
+            for(int j=0; j<WIDTH; j++) {
+                if(map[i][j] != '.' && !check[i][j]) {
+                    check[i][j] = true;
+                    q.push(make_pair(i,j));
+                    dfs(i, j, map[i][j]);
+                    make_empty();
                 }
             }
         }
-        make_empty();
+        
+        if(flag) {
+            ans++;
+        } else break;
+        
         gravity();
     }
-    
     cout << ans << '\n';
-    
     return 0;
 }
