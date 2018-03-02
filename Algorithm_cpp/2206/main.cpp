@@ -21,6 +21,7 @@ void bfs() {
         int c = q.front().c;
         int passed = q.front().passed;
         q.pop();
+
         for(int k=0; k<4; k++) {
             int nr = r + dr[k];
             int nc = c + dc[k];
