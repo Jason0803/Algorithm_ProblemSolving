@@ -144,6 +144,11 @@
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
+		<key>12100.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>114</integer>
+		</dict>
 		<key>1226.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -174,6 +179,11 @@
 			<key>orderHint</key>
 			<integer>55</integer>
 		</dict>
+		<key>13460.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>115</integer>
+		</dict>
 		<key>1389.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -187,7 +197,7 @@
 		<key>14501_repeat.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>113</integer>
+			<integer>112</integer>
 		</dict>
 		<key>14503.xcscheme</key>
 		<dict>
@@ -512,7 +522,7 @@
 		<key>9328.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>112</integer>
+			<integer>113</integer>
 		</dict>
 		<key>9663.xcscheme</key>
 		<dict>
