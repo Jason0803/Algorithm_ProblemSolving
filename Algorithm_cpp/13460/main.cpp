@@ -1,107 +1,117 @@
-#include <iostream>
-#include <algorithm>
+#include <cstdio>
 #include <queue>
-#define MAX_SIZE 11
-#define INF 987654321
-#define EMPTY       '.'
-#define WALL        '#'
-#define HOLE        'O'
-#define RED_ORB     'R'
-#define BLUE_ORB    'B'
 using namespace std;
-typedef struct _Point {
-    int r, c;
-    int cnt;
-}Point;
-Point hole;
-queue<Point> red_q;
-queue<Point> blue_q;
-int N, M, ans;
-char map[MAX_SIZE][MAX_SIZE];
-int dr[] = {-1, 1, 0, 0};
-int dc[] = {0, 0, -1, 1};
-
-void bfs() {
-    while(!red_q.empty() && !blue_q.empty()) {
-        int red_r = red_q.front().r;
-        int red_c = red_q.front().c;
-        int cnt = red_q.front().cnt;
-        red_q.pop();
-        int blue_r = blue_q.front().r;
-        int blue_c = blue_q.front().c;
-        blue_q.pop();
-        
-        if(red_r == hole.r && red_c == hole.c) {
-            if(cnt < ans) ans = cnt;
-            continue;
-        }
-        
-        
-        
-        // MOVE - RED
-        for(int dir = 0; dir < 4; dir++) {
-            for(int mult = 1; mult < MAX_SIZE; mult++) {
-                int red_nr = red_r + dr[dir] * mult;
-                int red_nc = red_c + dc[dir] * mult;
+struct Node{
+    int d, rx, ry, bx, by;
+};
+char mat[10][11];
+int n, m;
+int fx, fy;
+int dx[4]={-1, 1, 0, 0};
+int dy[4]={0, 0, -1, 1};
+int main(){
+    scanf("%d%d", &n, &m);
+    for(int i=0;i<n;i++)
+        scanf("%s", mat[i]);
+    int srx, sry, sbx, sby;
+    for(int i=0;i<n;i++)
+        for(int j=0;j<m;j++)
+            if(mat[i][j]=='R')
+                srx=i, sry=j;
+            else if(mat[i][j]=='B')
+                sbx=i, sby=j;
+            else if(mat[i][j]=='O')
+                fx=i, fy=j;
+    queue<Node> q;
+    q.push({0, srx, sry, sbx, sby});
+    int ans=-1;
+    while(!q.empty()){
+        int cnt=q.front().d;
+        int rx=q.front().rx;
+        int ry=q.front().ry;
+        int bx=q.front().bx;
+        int by=q.front().by;
+        q.pop();
+        if(cnt==10)
+            break;
+        for(int i=0;i<4;i++){
+            //빨간 공이 굴러가는 경우에서
+            int rex=0;
+            int blue=0;
+            int nrx, nry;
+            int rmove=0;
+            nrx=rx+dx[i];
+            nry=ry+dy[i];
+            while(mat[nrx][nry]!='#'){
+                rmove++;
+                //가는 길에 B가 있는 경우
+                if(nrx==bx&&nry==by)
+                    blue=rmove;
+                //가는 길에 구멍이 있는 경우
+                if(mat[nrx][nry]=='O')
+                    rex=rmove;
+                nrx+=dx[i];
+                nry+=dy[i];
+            }
+            bool bex=false;
+            bool red=false;
+            int nbx, nby;
+            int bmove=0;
+            nbx=bx+dx[i];
+            nby=by+dy[i];
+            while(mat[nbx][nby]!='#'){
+                bmove++;
+                //가는 길에 R이 있는 경우
+                if(nbx==rx&&nby==ry)
+                    red=true;
+                //가는 길에 구멍이 있는 경우
+                if(mat[nbx][nby]=='O')
+                    bex=true;
+                nbx+=dx[i];
+                nby+=dy[i];
+            }
+            //서로 같은 직선상에 없는 경우
+            if(!blue&&!red){
                 
-                if(dir < 3){    // UP & DOWN
-                    
-                    if(red_nr == 1 || red_nr == N-1) {
-                        int ncnt = cnt + 1;
-                        red_q.push(Point{red_nr, red_nc, ncnt});
-                        break;
-                    }
-                } else {        // Left & Right
-                    if(red_nc == 1 || red_nc == M-1) {
-                        int ncnt = cnt + 1;
-                        red_q.push(Point{red_nr, red_nc, ncnt});
-                        break;
-                    }
+                if(rex){
+                    ans=cnt+1;
+                    goto print;
                 }
-                
-            }
-        }
-        
-        
-        // Up & Down
-        for(int dir=0; dir<2; dir++) {
-            int red_nr, blue_nr;
-            for(int mult=1; mult<=N; mult++) {
-                if(map[red_r + dr[dir] * mult][red_c] == EMPTY) {
-                    if(red_r + dr[dir] * mult == 1 || red_r + dr[dir] * mult == N-1) {
-                        red_nr = red_r + dr[dir] * mult;
-                    }
+                else if(bex){
+                    continue;
                 }
-                blue_nr = blue_r + dr[dir] * mult;
-                
+                else{
+                    q.push({cnt+1, rx+dx[i]*rmove, ry+dy[i]*rmove, bx+dx[i]*bmove, by+dy[i]*bmove});
+                }
+            }
+            //R이 가는 길에 B가 있는 경우
+            else if(blue){
+                //구멍이 B보다 앞쪽에 있는 경우 하나 빼야댐
+                if(rex){
+                    if(rex<blue){
+                        ans=cnt+1;
+                        goto print;
+                    }
+                    continue;
+                }
+                else{
+                    rmove--;
+                    q.push({cnt+1, rx+dx[i]*rmove, ry+dy[i]*rmove, bx+dx[i]*bmove, by+dy[i]*bmove});
+                }
+            }
+            //B가 가는 길에 R이 있는 경우
+            else{
+                if(rex){
+                    continue;
+                }
+                else{
+                    bmove--;
+                    q.push({cnt+1, rx+dx[i]*rmove, ry+dy[i]*rmove, bx+dx[i]*bmove, by+dy[i]*bmove});
+                }
             }
         }
-
-        // Left & Right
-        
-        
     }
-}
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie();
-    
-    cin >> N >> M;
-    for(int i=0; i<N; i++) {
-        for(int j=0; j<M; j++) {
-            cin >> map[i][j];
-            if(map[i][j] == RED_ORB) {
-                red_q.push(Point{i,j});
-            } else if(map[i][j] == BLUE_ORB) {
-                blue_q.push(Point{i,j});
-            } else if(map[i][j] == HOLE) {
-                hole.r = i;
-                hole.c = i;
-            }
-        }
-    }
-    
-    ans = -1;
-    bfs();
+print:
+    printf("%d\n", ans);
     return 0;
 }
