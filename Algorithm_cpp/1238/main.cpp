@@ -22,9 +22,8 @@ void dfs(int dept, int dest, int current, int current_sum) {
         printf(" > Current : %d\n", current);
         printf(" >> Next : %d, current_sum : %d\n", next, current_sum + dist[current][next] );
         dfs(dept, dest, next, current_sum + dist[current][next]);
-        for(int i=1; i<= N; i++) {
-            visited[current][i] = false;
-        }
+        
+        for(int i=1; i<= N; i++) visited[current][i] = false;
     }
     
 }
