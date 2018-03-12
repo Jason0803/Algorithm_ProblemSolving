@@ -4,44 +4,35 @@
 #define MAX_SIZE 401
 using namespace std;
 int n, k, s;
-bool found;
-vector<int> rel[MAX_SIZE];
-bool visited[MAX_SIZE];
-void dfs(int current, int dest) {
-    if(current == dest) {
-        found = true;
-        memset(visited, false, sizeof(visited));
-        return;
-    }
-    for(int i=0; i<rel[current].size(); i++) {
-        int next = rel[current][i];
-        if(visited[next]) continue;
-        visited[next] = true;
-        dfs(next, dest);
-    }
-    memset(visited, false, sizeof(visited));
-}
+int found[MAX_SIZE][MAX_SIZE];
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie();
     cin >> n >> k;
-
+    
     int u, v;
-    for(int i=0; i<k; i++) {
+    while(k--) {
         cin >> u >> v;
-        rel[u].push_back(v);
+        found[u][v] = -1;
+    }
+    
+    for(int k=1; k<=n; k++) {
+        for(int i=1; i<=n; i++) {
+            for(int j=1; j<=n; j++) {
+                if(found[i][k] == found[k][j] && found[i][k] != 0) {
+                    found[i][j] = found[i][k];
+                }
+            }
+        }
     }
     cin >> s;
     for(int i=0; i<s; i++) {
-        found = false;
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL); cout.tie(NULL);
         cin >> u >> v;
-        dfs(u, v);
-        if(found) cout << "-1\n";
-        else {
-            dfs(v,u);
-            if(found) cout << "1\n";
-            else cout << "0\n";
-        }
+        if(found[u][v] == -1) cout << "-1\n";
+        else if(found[v][u] == -1) cout << "1\n";
+        else cout << "0\n";
     }
     return 0;
 }
