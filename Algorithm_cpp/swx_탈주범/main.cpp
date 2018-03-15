@@ -8,7 +8,8 @@ typedef struct _Point {
     int type;
     int depth;
 }Point;
-int T, N, M, R, C, L, ans = 1;
+queue<Point> q;
+int T, N, M, R, C, L, ans;
 int map[MAX_SIZE][MAX_SIZE];
 bool visited[MAX_SIZE][MAX_SIZE];
 int dr[] = {-1, 1, 0, 0};
@@ -52,20 +53,30 @@ void input() {
             cin >> map[i][j];
         }
     }
+    q.push(Point{R,C, map[R][C], 1});
 }
-void dfs(Point current) {
-    if(current.depth == L) {
-        return;
-    }
-    for(int d=0; d<4; d++) {
-        int nr = current.r + dr[d];
-        int nc = current.c + dc[d];
-        if(nr < 0 || nr >= N || nc < 0 || nc >= M) continue;
-        if(visited[nr][nc] || map[nr][nc] == 0) continue;
-        if(isConnected(current.type, map[nr][nc], d)) {
-            ans++;
-            visited[nr][nc] = true;
-            dfs(Point{nr,nc,map[nr][nc],current.depth+1});
+void bfs() {
+    while(!q.empty()) {
+        int q_size = q.size();
+        while(q_size--) {
+            int r = q.front().r;
+            int c = q.front().c;
+            int type = q.front().type;
+            int depth = q.front().depth;
+            q.pop();
+            // in case bfs reaches the depth (L)
+            if(depth == L) continue;
+            for(int d=0; d<4; d++) {
+                int nr = r + dr[d];
+                int nc = c + dc[d];
+                if(nr < 0 || nr >= N || nc < 0 || nc >= M) continue;
+                if(visited[nr][nc] || !map[nr][nc]) continue;
+                if(isConnected(type, map[nr][nc], d)) {
+                    ans++;
+                    visited[nr][nc] = true;
+                    q.push(Point{nr,nc,map[nr][nc],depth+1});
+                }
+            }
         }
     }
 }
@@ -75,7 +86,7 @@ int main() {
     cin >> T;
     for(int test_case = 1; test_case <= T; test_case++) {
         input();
-        dfs(Point{R,C,map[R][C], 1});
+        bfs();
         cout << "#" << test_case << " " << ans << '\n';
         init();
     }
