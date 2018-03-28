@@ -57,7 +57,7 @@
 		<key>1094.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>5</integer>
 		</dict>
 		<key>10971.xcscheme</key>
 		<dict>
@@ -87,7 +87,7 @@
 		<key>11004.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>6</integer>
 		</dict>
 		<key>11047.xcscheme</key>
 		<dict>
@@ -167,7 +167,7 @@
 		<key>1260.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>1260_prac.xcscheme</key>
 		<dict>
@@ -209,6 +209,11 @@
 			<key>orderHint</key>
 			<integer>52</integer>
 		</dict>
+		<key>14501_prac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>134</integer>
+		</dict>
 		<key>14501_repeat.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -217,7 +222,12 @@
 		<key>14503.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>108</integer>
+			<integer>106</integer>
+		</dict>
+		<key>14503_prac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>135</integer>
 		</dict>
 		<key>14606.xcscheme</key>
 		<dict>
@@ -277,7 +287,12 @@
 		<key>1726.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>106</integer>
+			<integer>108</integer>
+		</dict>
+		<key>1726_prac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>136</integer>
 		</dict>
 		<key>1759.xcscheme</key>
 		<dict>
@@ -288,6 +303,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>74</integer>
+		</dict>
+		<key>1926.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>137</integer>
 		</dict>
 		<key>1929.xcscheme</key>
 		<dict>
@@ -314,6 +334,11 @@
 			<key>orderHint</key>
 			<integer>79</integer>
 		</dict>
+		<key>2161.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>138</integer>
+		</dict>
 		<key>2163.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -337,7 +362,7 @@
 		<key>2206_repeat.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>109</integer>
+			<integer>110</integer>
 		</dict>
 		<key>2231.xcscheme</key>
 		<dict>
@@ -352,7 +377,7 @@
 		<key>2309.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>9</integer>
 		</dict>
 		<key>2331.xcscheme</key>
 		<dict>
@@ -362,7 +387,7 @@
 		<key>2455.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>4</integer>
 		</dict>
 		<key>2468_bfs.xcscheme</key>
 		<dict>
@@ -412,7 +437,7 @@
 		<key>2589_repeat.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>110</integer>
+			<integer>109</integer>
 		</dict>
 		<key>2606.xcscheme</key>
 		<dict>
@@ -492,12 +517,17 @@
 		<key>3055_prac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>127</integer>
+			<integer>128</integer>
 		</dict>
 		<key>4108.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>97</integer>
+		</dict>
+		<key>4991.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>130</integer>
 		</dict>
 		<key>5427.xcscheme</key>
 		<dict>
@@ -549,6 +579,11 @@
 			<key>orderHint</key>
 			<integer>84</integer>
 		</dict>
+		<key>9205.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>131</integer>
+		</dict>
 		<key>9328.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -567,7 +602,7 @@
 		<key>Algorithm_cpp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
 		<key>playground.xcscheme</key>
 		<dict>
@@ -602,37 +637,47 @@
 		<key>swx_2105_dessert_prac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>128</integer>
+			<integer>122</integer>
 		</dict>
 		<key>swx_2112_film.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>123</integer>
+			<integer>124</integer>
 		</dict>
 		<key>swx_2115_honey.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>124</integer>
+			<integer>125</integer>
 		</dict>
 		<key>swx_2117_security.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>125</integer>
+			<integer>126</integer>
 		</dict>
 		<key>swx_2805_crops.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>126</integer>
+			<integer>127</integer>
 		</dict>
 		<key>swx_3074.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>54</integer>
 		</dict>
+		<key>swx_3233.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>132</integer>
+		</dict>
 		<key>swx_3456.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>103</integer>
+		</dict>
+		<key>swx_3752.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>133</integer>
 		</dict>
 		<key>swx_디저트.xcscheme</key>
 		<dict>
@@ -642,7 +687,7 @@
 		<key>swx_점심식사.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>122</integer>
+			<integer>123</integer>
 		</dict>
 		<key>swx_탈주범.xcscheme</key>
 		<dict>
