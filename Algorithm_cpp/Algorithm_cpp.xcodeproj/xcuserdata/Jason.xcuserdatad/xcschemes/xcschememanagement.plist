@@ -39,6 +39,11 @@
 			<key>orderHint</key>
 			<integer>27</integer>
 		</dict>
+		<key>1063.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>141</integer>
+		</dict>
 		<key>1065.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -509,6 +514,11 @@
 			<key>orderHint</key>
 			<integer>105</integer>
 		</dict>
+		<key>2979.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>140</integer>
+		</dict>
 		<key>3055.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -533,6 +543,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>98</integer>
+		</dict>
+		<key>5532.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>139</integer>
 		</dict>
 		<key>6603.xcscheme</key>
 		<dict>
