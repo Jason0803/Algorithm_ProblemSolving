@@ -374,6 +374,11 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>2234.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>144</integer>
+		</dict>
 		<key>2251.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -552,7 +557,7 @@
 		<key>6593.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>143</integer>
+			<integer>142</integer>
 		</dict>
 		<key>6603.xcscheme</key>
 		<dict>
@@ -692,7 +697,7 @@
 		<key>swx_33490.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>142</integer>
+			<integer>143</integer>
 		</dict>
 		<key>swx_3456.xcscheme</key>
 		<dict>
