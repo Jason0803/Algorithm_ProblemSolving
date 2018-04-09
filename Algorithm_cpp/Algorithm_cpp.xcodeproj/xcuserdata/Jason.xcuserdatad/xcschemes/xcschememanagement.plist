@@ -119,6 +119,11 @@
 			<key>orderHint</key>
 			<integer>106</integer>
 		</dict>
+		<key>11559_prac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>146</integer>
+		</dict>
 		<key>11559_repeat.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -248,6 +253,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>38</integer>
+		</dict>
+		<key>14888.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>151</integer>
 		</dict>
 		<key>1525.xcscheme</key>
 		<dict>
@@ -637,22 +647,22 @@
 		<key>line_1.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>146</integer>
+			<integer>147</integer>
 		</dict>
 		<key>line_3.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>147</integer>
+			<integer>148</integer>
 		</dict>
 		<key>line_4.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>148</integer>
+			<integer>149</integer>
 		</dict>
 		<key>line_5.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>149</integer>
+			<integer>150</integer>
 		</dict>
 		<key>playground.xcscheme</key>
 		<dict>
