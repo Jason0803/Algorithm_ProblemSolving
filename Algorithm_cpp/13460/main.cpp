@@ -1,117 +1,110 @@
-#include <cstdio>
-#include <queue>
+#include <iostream>
+#include <algorithm>
+#define EMPTY   '.'
+#define WALL    '#'
+#define BLUE    'B'
+#define RED     'R'
+#define HOLE    'O'
 using namespace std;
-struct Node{
-    int d, rx, ry, bx, by;
-};
-char mat[10][11];
-int n, m;
-int fx, fy;
-int dx[4]={-1, 1, 0, 0};
-int dy[4]={0, 0, -1, 1};
-int main(){
-    scanf("%d%d", &n, &m);
-    for(int i=0;i<n;i++)
-        scanf("%s", mat[i]);
-    int srx, sry, sbx, sby;
-    for(int i=0;i<n;i++)
-        for(int j=0;j<m;j++)
-            if(mat[i][j]=='R')
-                srx=i, sry=j;
-            else if(mat[i][j]=='B')
-                sbx=i, sby=j;
-            else if(mat[i][j]=='O')
-                fx=i, fy=j;
-    queue<Node> q;
-    q.push({0, srx, sry, sbx, sby});
-    int ans=-1;
-    while(!q.empty()){
-        int cnt=q.front().d;
-        int rx=q.front().rx;
-        int ry=q.front().ry;
-        int bx=q.front().bx;
-        int by=q.front().by;
-        q.pop();
-        if(cnt==10)
-            break;
-        for(int i=0;i<4;i++){
-            //빨간 공이 굴러가는 경우에서
-            int rex=0;
-            int blue=0;
-            int nrx, nry;
-            int rmove=0;
-            nrx=rx+dx[i];
-            nry=ry+dy[i];
-            while(mat[nrx][nry]!='#'){
-                rmove++;
-                //가는 길에 B가 있는 경우
-                if(nrx==bx&&nry==by)
-                    blue=rmove;
-                //가는 길에 구멍이 있는 경우
-                if(mat[nrx][nry]=='O')
-                    rex=rmove;
-                nrx+=dx[i];
-                nry+=dy[i];
+typedef struct _Point {
+    int r, c;
+}Point;
+Point p_blue, p_red, p_hole;
+int N, M, ans;
+char map[11][11];
+bool visited[11][11][11][11];
+int dr[] = {-1, 1, 0, 0};
+int dc[] = {0, 0, -1, 1};
+bool isOut(int r, int c) {
+    return (r < 1 || r >= N-1 || c < 1 || c >= M-1);
+}
+void simulate(Point *blue, Point *red, int cnt) {
+    if(ans != -1 && cnt > ans) return;
+    if(blue->r == p_hole.r && blue->c == p_hole.c) {
+        ans = -1;
+        return;
+    }
+    if(red->r == p_hole.r && red->c == p_hole.c) {
+        if(ans == -1) ans = cnt;
+        else ans = min(ans,cnt);
+        return;
+    }
+    for(int dir=0; dir<4; dir++) {
+        int nbr = blue->r;
+        int nbc = blue->c;
+        int nrr = red->r;
+        int nrc = red->c;
+        
+        for(int k=1; k < max(N,M)-1; k++) {
+            nbr += dr[dir];
+            nbc += dc[dir];
+            nrr += dr[dir];
+            nrc += dc[dir];
+            
+            if(isOut(nbr, nbc) || map[nbr][nbc] == WALL) {
+                nbr -= dr[dir];
+                nbc -= dc[dir];
             }
-            bool bex=false;
-            bool red=false;
-            int nbx, nby;
-            int bmove=0;
-            nbx=bx+dx[i];
-            nby=by+dy[i];
-            while(mat[nbx][nby]!='#'){
-                bmove++;
-                //가는 길에 R이 있는 경우
-                if(nbx==rx&&nby==ry)
-                    red=true;
-                //가는 길에 구멍이 있는 경우
-                if(mat[nbx][nby]=='O')
-                    bex=true;
-                nbx+=dx[i];
-                nby+=dy[i];
+            if(isOut(nrr, nrc) || map[nrr][nrc] == WALL) {
+                nrr -= dr[dir];
+                nrc -= dc[dir];
             }
-            //서로 같은 직선상에 없는 경우
-            if(!blue&&!red){
-                
-                if(rex){
-                    ans=cnt+1;
-                    goto print;
-                }
-                else if(bex){
-                    continue;
-                }
-                else{
-                    q.push({cnt+1, rx+dx[i]*rmove, ry+dy[i]*rmove, bx+dx[i]*bmove, by+dy[i]*bmove});
-                }
+            if(map[nbr][nbc] == HOLE || map[nrr][nrc] == HOLE) {
+                Point nbp = {nbr, nbc};
+                Point nrp = {nrr, nrc};
+                simulate(&nbp, &nrp, cnt+1);
             }
-            //R이 가는 길에 B가 있는 경우
-            else if(blue){
-                //구멍이 B보다 앞쪽에 있는 경우 하나 빼야댐
-                if(rex){
-                    if(rex<blue){
-                        ans=cnt+1;
-                        goto print;
-                    }
-                    continue;
-                }
-                else{
-                    rmove--;
-                    q.push({cnt+1, rx+dx[i]*rmove, ry+dy[i]*rmove, bx+dx[i]*bmove, by+dy[i]*bmove});
-                }
+        }
+        if(map[nbr][nbc] == HOLE || map[nrr][nrc] == HOLE) continue;
+        
+        if(nbr == nrr && nbc == nrc) {
+            if(dir == 0) {
+                if(blue->r > red->r) nbr += 1;
+                else nrr += 1;
+            } else if(dir == 1) {
+                if(blue->r > red->r) nrr -= 1;
+                else nbr -= 1;
+            } else if(dir == 2) {
+                if(blue->c > red->c) nbc += 1;
+                else nrc+= 1;
+            } else {
+                if(blue->c > red->c) nrc -= 1;
+                else nbc -= 1;
             }
-            //B가 가는 길에 R이 있는 경우
-            else{
-                if(rex){
-                    continue;
-                }
-                else{
-                    bmove--;
-                    q.push({cnt+1, rx+dx[i]*rmove, ry+dy[i]*rmove, bx+dx[i]*bmove, by+dy[i]*bmove});
-                }
+        }
+        if(visited[nbr][nbc][nrr][nrc]) continue;
+        visited[nbr][nbc][nrr][nrc] = true;
+        Point nbp = {nbr, nbc};
+        Point nrp = {nrr, nrc};
+        simulate(&nbp, &nrp, cnt+1);
+        visited[nbr][nbc][nrr][nrc] = false;
+        
+    }
+}
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cin >> N >> M;
+    for(int i=0; i<N; i++) {
+        for(int j=0; j<M; j++) {
+            cin >> map[i][j];
+            if(map[i][j] == RED) {
+                p_red.r = i;
+                p_red.c = j;
+            } else if(map[i][j] == BLUE) {
+                p_blue.r = i;
+                p_blue.c = j;
+            } else if(map[i][j] == HOLE) {
+                p_hole.r = i;
+                p_hole.c = j;
             }
         }
     }
-print:
-    printf("%d\n", ans);
+    ans = 987654321;
+    visited[p_blue.r][p_blue.c][p_red.r][p_red.c] = true;
+    simulate(&p_blue, &p_red, 0);
+    
+    if(ans == 987654321) ans = -1;
+    cout << ans << '\n';
     return 0;
 }
