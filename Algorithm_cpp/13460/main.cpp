@@ -104,7 +104,7 @@ int main() {
     visited[p_blue.r][p_blue.c][p_red.r][p_red.c] = true;
     simulate(&p_blue, &p_red, 0);
     
-    if(ans == 987654321) ans = -1;
+    if(ans > 10) ans = -1;
     cout << ans << '\n';
     return 0;
 }
