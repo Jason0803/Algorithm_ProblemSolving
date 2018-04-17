@@ -217,7 +217,7 @@
 		<key>14500.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>158</integer>
+			<integer>159</integer>
 		</dict>
 		<key>14501.xcscheme</key>
 		<dict>
@@ -302,7 +302,12 @@
 		<key>15686_ceim_2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>159</integer>
+			<integer>158</integer>
+		</dict>
+		<key>15686_prac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>160</integer>
 		</dict>
 		<key>1600.xcscheme</key>
 		<dict>
