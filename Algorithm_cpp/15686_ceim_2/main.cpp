@@ -33,6 +33,8 @@ void dfs(int idx, int cnt) {
     }
     for (int i = idx + 1; i < bCnt; i++) {
         if (!visit[i]) {
+            // 2. 방문하지 않은 것 중,방문하며 cnt 는 M을 향해 다가간다
+            // main 의 1번에 지나온 i 번째는 false
             visit[i] = true;
             dfs(i, cnt + 1);
             visit[i] = false;
@@ -52,6 +54,7 @@ int main() {
     }
     
     for (int i = 0; i < bCnt; i++) {
+        // 1. i 번째 치킨집 선택하고 시작하는 경우,
         visit[i] = true;
         dfs(i, 1);
         visit[i] = false;

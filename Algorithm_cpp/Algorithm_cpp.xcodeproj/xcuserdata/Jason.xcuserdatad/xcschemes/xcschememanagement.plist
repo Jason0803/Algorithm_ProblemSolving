@@ -54,6 +54,11 @@
 			<key>orderHint</key>
 			<integer>39</integer>
 		</dict>
+		<key>10828.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>166</integer>
+		</dict>
 		<key>10869.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -144,6 +149,11 @@
 			<key>orderHint</key>
 			<integer>32</integer>
 		</dict>
+		<key>11723_prac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>162</integer>
+		</dict>
 		<key>11724.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -153,6 +163,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>24</integer>
+		</dict>
+		<key>1174.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>164</integer>
 		</dict>
 		<key>1182.xcscheme</key>
 		<dict>
@@ -298,6 +313,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>80</integer>
+		</dict>
+		<key>15683.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>161</integer>
 		</dict>
 		<key>15686_ceim_2.xcscheme</key>
 		<dict>
@@ -614,6 +634,11 @@
 			<key>orderHint</key>
 			<integer>138</integer>
 		</dict>
+		<key>6378.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>163</integer>
+		</dict>
 		<key>6593.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -713,6 +738,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>34</integer>
+		</dict>
+		<key>prac_c_struct.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>165</integer>
 		</dict>
 		<key>swx_1204.xcscheme</key>
 		<dict>

@@ -1,55 +1,56 @@
-#include <cstdio>
-struct Point{int r; int c;};
-int N, M, ans, map[50][50], cnt_pp, cnt_ch;
-bool check[13];
-Point people[100], chickens[13];
-int Abs(int a){
-    return a>0?a:-a;
-}
-int dist(Point* h, Point* p) {
-    return (Abs(h->r-p->r) + Abs(h->c-p->c));
-}
-int getMinimum(){
-    int ret = 0;
-    for(int p=0; p<cnt_pp; p++) {
-        int min = 987654321;
-        for(int h=0; h<cnt_ch; h++) {
-            if(!check[h]) continue;
-            int d = dist(&chickens[h], &people[p]);
-            if(min>d) min = d;
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+struct Point {int r; int c;};
+int N, M, ans, map[50][50], mat[14][101];
+bool check[14];
+vector<Point> p, ch;
+
+void dfs(int idx, int depth) {
+    if(idx >= ch.size()) return;
+    if(depth == M) {
+        int sum=0;
+        for(int i=0; i<p.size(); i++) {
+            int temp = 987654321;
+            for(int j=0; j<ch.size(); j++) {
+                
+                if(!mat[j][i]) {
+                    mat[j][i] = abs(p[i].r-ch[j].r)+abs(p[i].c-ch[j].c);
+                }
+                if(temp>mat[j][i]) temp = mat[j][i];
+            }
+            sum+=temp;
         }
-        ret += min;
-    }
-    return ret;
-}
-void dfs(int idx, int d){
-    if(d==M) {
-        int min = getMinimum();
-        if(ans>min) ans = min;
+        if(ans>sum) ans=sum;
         return;
     }
-    for(int i=idx+1; i<cnt_ch; i++) {
-        if(check[i]) continue;
-        check[i] = true;
-        dfs(i, d+1);
-        check[i] = false;
-    }
+    
+    // 1.
+    check[idx] = true;
+    dfs(idx+1, depth+1);
+    check[idx] = false;
+    
+    // 2.
+    dfs(idx+1, depth);
 }
 int main() {
-    scanf("%d %d", &N, &M);
-    ans = 987654321;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cin >> N >> M;
     for(int i=0; i<N; i++) {
         for(int j=0; j<N; j++) {
-            scanf("%d", &map[i][j]);
-            if(map[i][j]==1) people[cnt_pp++] = {i,j};
-            else if(map[i][j]==2) chickens[cnt_ch++] = {i,j};
+            cin >> map[i][j];
+            if(map[i][j]==1) p.push_back({i,j});
+            else if(map[i][j]==2) ch.push_back({i,j});
         }
     }
-    for(int i=0; i<cnt_ch; i++) {
+    ans = 987654321;
+    for(int i=0; i<ch.size(); i++) {
         check[i] = true;
         dfs(i,1);
         check[i] = false;
     }
-    printf("%d\n", ans);
+    cout << ans << '\n';
     return 0;
 }
