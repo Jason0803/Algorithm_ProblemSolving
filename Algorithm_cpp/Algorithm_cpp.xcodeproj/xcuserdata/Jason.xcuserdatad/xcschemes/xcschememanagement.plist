@@ -19,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>1026.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>168</integer>
+		</dict>
 		<key>1038.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -373,6 +378,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>79</integer>
+		</dict>
+		<key>1874.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>167</integer>
 		</dict>
 		<key>1926.xcscheme</key>
 		<dict>
